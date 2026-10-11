@@ -11,7 +11,7 @@ if not WEBHOOK.startswith('https://discord.com/api/webhooks/') and not WEBHOOK.s
     raise SystemExit('Missing or invalid DISCORD_WEBHOOK_URL secret.')
 
 config = json.loads((ROOT / 'config.json').read_text(encoding='utf-8'))
-message = config.get('message', '').strip()
+message = config.get('message', '')
 if not message:
     raise SystemExit('config.json message must not be empty.')
 
